@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <h1>Contact</h1>
+    <head>
         <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
+        <meta charset = "UFT-8">
+        <link href = "https://fonts.googleapis.com/css?family=Work+Sans:400">
+        <title>Anilde Santo</title>
+    </head>
+    <header>
+        <div class = "container" >
+            <h1 class = "name" >Anilde Santo</h1>
+            <nav>
+                <ul >
+                    <li><a href= "index.html"> Home </a></li>
+                    <li><a href= "about.html"> About </a></li>
+                    <li><a href= "projects.html"> Projects </a></li>
+                    <li><a href= "skills.html"> Skills </a></li>
+                    <li><a href= "contact.html"> Contact </a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <body name = "contact">
         <div>
-            <nav>
-                <table id = "mainTable">
-                    <tr >
-                        <td><a href= "index.html"> Home </a></td>
-                        <td><a href= "about.html"> About </a></td>
-                        <td><a href= "skills.html"> Skills </a></td>
-                        <td><a href= "projects.html"> Projects </a></td>
-                    </tr>
-                </table>
-            </nav>
-        </div>   
+            <form>
+                Name
+                <br><input type = "text" name  = "name"><br>
+                Email
+                <br><input type ="email" name = "email"><br>
+                Phone Number
+                <br><input type = "text" name = "phone"><br>
+                <input type="radio" name="gender" value="female" value="male"> Female
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                
+                Who do you wish to send this to:
+                <select>  
+                    <option value = "qa employee"> QA Employee</option>
+                    <option value = "developer"> Developer</option>  
+                </select>
+                <br> Text
+                <br><input type ="text" name = "info" width="19px"><br>
+                <br><Button type = "submit">Submit</button><br>
+
+            </form>
+        </div>
     </body>
 </html>

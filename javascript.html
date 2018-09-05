@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <script>
+    var something = new Date();
+    function Person (n,a,p)
+    {
+        this.name = n;
+        this.age = a;
+        this.profession = p;
+        
+        this.getName = function ()
+        {
+            return this.name;
+        }
+        this.getDetails = function ()
+        {
+            return "This is " + this.name + ", this person is "+ this.age + " years old and is a " + this.profession;
+        }
+    };
+    function createPerson ()
+    {
+        var n = document.getElementById('name').value.toUpperCase(); 
+        var a = +document.getElementById('age').value.toUpperCase();
+        var p = document.getElementById('occ').value.toUpperCase();
+        if(n !== "" && a !== "" && p !== "")
+        {
+            if(!isNaN(a))
+            {
+                var updated = false;
+                people.forEach(element => 
+                {
+                    if(element.getName().toUpperCase() == n) 
+                    {
+                        element.name = n;
+                        element.age = a;
+                        element.profession = p;
+                        document.getElementById("p").value =  element.getDetails();
+                        window.alert(n + " details updated!");
+                        updated = true;
+                    }
+                });
+                if(updated == false)
+                {
+                    var pe = new Person(n,a,p);
+                    addToDropDown(pe.getName());
+                    addToPeopleList(pe);
+                    document.getElementById('name').value = ""; 
+                    document.getElementById('age').value = "";
+                    document.getElementById('occ').value = "";
+                    document.getElementById('name').focus();
+                    window.alert("Person added to List!");
+                }
+    
+            }
+            else
+            {
+                window.alert("Enter a valid age!");
+                document.getElementById('age').focus();
+            }
+        }
+        else
+        {
+            window.alert("Please fill in all details!");
+            document.getElementById('name').focus();
+        }
+    }
+    var people = [];
+    function toLoad()
+    {
+        var ani = new Person("Ani".toUpperCase(),"32".toUpperCase(),"Trainee".toUpperCase());
+        addToDropDown(ani.getName());
+        addToPeopleList(ani);
+    }
+   
+    function addToPeopleList(p)
+    {
+        people.push(p);
+    }
+    function changeList()
+    {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        people.forEach(element => 
+        {
+           if(element.getName() == strUser) 
+           {
+             document.getElementById("p").value =  element.getDetails().toUpperCase();  
+           }
+        });
+    }
+    function addToDropDown(name)
+    {
+        var x = document.getElementById("list");
+        var option = document.createElement("option");
+        option.text = name;
+        option.selected;
+        x.add(option);
+    }
+    function printDetails()
+    {
+     return something;
+    }
+    function Math(n)
+    {
+        var num1 = document.getElementById('number1').value;
+        var num2 = document.getElementById('number2').value;
+        if(num1 == "" && num2 !== "" )
+        {
+            window.alert("Missing number 1");
+            document.getElementById('number1').focus();
+        }
+        else if(num1 !== "" && num2 == "" )
+        {
+            window.alert("Missing number 2");
+            document.getElementById('number2').focus();
+        }
+        else if(num1 == "" && num2 == "" )
+        {
+            window.alert("Please insert number 1 and 2");
+            document.getElementById('number1').focus();
+        }
+        else if(isNaN(num1) |  isNaN(num2))
+        {
+            window.alert("Please use numbers!");
+            document.getElementById('number1').focus();
+        }
+        else
+        {
+            var num1 = +document.getElementById('number1').value;
+            var num2 = +document.getElementById('number2').value;
+            var result = 0;
+            if(n == 1)
+            {
+                result = num1+num2;
+            }
+            else if(n == 2)
+            {
+                result = num1-num2;
+            }
+            else if(n == 3)
+            {
+                result = num1*num2;
+            }
+            else if(n == 4)
+            {
+                result = num1/num2;
+            }
+            document.getElementById("result").value =  result;
+        }
+    }
+    function addition()
+    {
+        var num1 = document.getElementById('number1').value;
+        var num2 = document.getElementById('number2').value;
+
+        var result
+        document.getElementById("result").value =  +num1 + +num2;
+    }
+    </script>
+    <body onload ="toLoad()">
+        <div>
+            Number 1 <input id = "number1" type = "text" autofocus="autofocus"> <br>
+            Number 2 <input id = "number2" type = "text"><br>
+            <button onclick = "Math(1)" name = "addition"> + </button>
+            <button onclick = "Math(2)" name = "subtraction"> - </button>
+            <button onclick = "Math(3)" name = "multiplication"> * </button>
+            <button onclick = "Math(4)" name = "division"> / </button><br>
+            Result <input type = "text" id ="result" value = "calculation"><br>
+        </div>
+        <div>
+             <br><br>CREATE A PERSON
+            <br>Name
+            <br><input type = "text" id = "name">
+            <br>Age
+            <br><input type = "text" id = "age">
+            <br> Occupation
+            <br><input type = "text" id = "occ"><br>
+            <br><button onclick = "createPerson()"> Create Person
+            </button>
+        </div>
+        <div>
+            <br> <br>List of People
+            <select id = "list" onchange="changeList()">
+                <option value = ""></option>
+            </select>
+        </div>
+        <br><input type = "text" id = "p" size = "90"><br>
+    </body>
+</html>
