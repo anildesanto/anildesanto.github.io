@@ -1,23 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+@import url("https://fonts.googleapis.com/css?family=Alegreya:700i|Baloo+Tammudu|Cantarell:700i|Chango|Courgette|Niconne|Nova+Mono");
 body 
 {
-	margin: 0;
-	background: #222;
-	font-family: 'Work Sans', sans-serif;
+  font-family: 'Nova Mono', monospace;
 	font-weight: 800;
 }
 
 .container 
 {
     width: 80%;
-    height: 20%;
-	margin: 0 auto;
+    height: 10%;
+	  margin: 0 auto;
 }
-
 header 
 {
-  background: rgb(0, 255, 213);
-  
+  background: linear-gradient(to bottom, rgba(54,247,247,0.66) 0%, rgba(44,222,186,0.3) 55%, rgba(44,222,186,0) 100%);
 }
 
 header::after {
@@ -48,13 +44,18 @@ nav li {
 
   position: relative;
 }
-
-nav a, h1
+h1
 {
-  color: rgb(46, 46, 46);
+  font-family: 'Niconne';
+  font-size: 40px;
+}
+
+nav a
+{
+  color: rgb(0, 0, 0);
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 20px;
   
 }
 
@@ -77,4 +78,16 @@ nav a::before {
 nav a:hover::before 
 {
   width: 100%;
+}
+.bg-img1 
+{
+  background: url("./../images/computer.jpg");
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34f7f7', endColorstr='#2cdeba', GradientType=0 );
+  background-size: cover; 
+  height: 100%;
+} 
+*
+{
+  margin: 0;
+  padding:0;
 }

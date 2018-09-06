@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+    <script>
+    var textZone;
+    function load()
+    {
+        textZone = document.getElementById("text");
+    }
+    function insertParagraph()
+    {
+        var paragraph = document.createElement("p");
+        paragraph.textContent = "lol";
+        textZone.appendChild(paragraph);
+    }
+    function deleteParagraph()
+    {
+        textZone.removeChild(textZone.firstChild);
+    }
+    function changeParagraph()
+    {
+        textZone.firstChild.textContent = document.getElementById("change").value;
+    }
+    </script>
+    <body onload ="load()">
+        <button onclick=" insertParagraph()"> Insert </button>
+        <button onclick="deleteParagraph()"> Remove </button>
+        <input type = "text" id = "change">
+        <button onclick = "changeParagraph()"> Change Text </button>
+        <div id  = "text">
+
+        </div>
+    </body>
+</html>

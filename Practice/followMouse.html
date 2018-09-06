@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html onload="loading()" onmousemove="move()">
+    <head>
+    </head>
+    <script>
+    var number = 10;
+   
+    function loading()
+    {
+        var text = document.getElementById("text");
+    }
+    function move()
+    {
+        text.style.top = (window.event.clientY) + "px"; 
+        text.style.left = (window.event.clientX +20) + "px"; 
+        if(window.event.altKey)
+        {
+            number ++;
+        }
+        if(window.event.ctrlKey)
+        {
+            number --;
+        }
+        text.style.fontSize = number + "px";
+    }
+    function changeValue()
+    {
+        var textContent = document.getElementById("text").textContent;
+        var change = document.getElementById("change").value;
+        document.getElementById("text").textContent = change;
+        document.getElementById("change").value = textContent;
+    }
+    function changeColor(n)
+    {
+        text.style.backgroundColor  = n;
+    }
+    function resetColor()
+    {
+        text.style.backgroundColor  = "transparent";
+    }
+    function toggleVisibility(n)
+    {
+        text.style.visibility = n;
+    }
+    function visibility(n,v)
+    {
+        list = document.getElementById(n);
+        list.style.visibility = v;
+        console.log(n+ " " + v);
+    }
+    function drops(e,state,parent)
+    {
+        if(state == "visible")
+        {
+            list = document.getElementById(e);
+            list.style.visibility = state;
+            parent.style ="height:100px; width:80px; background-color: rgb(169, 248, 244);padding:0; margin:0";
+        }
+        else
+        {
+            list = document.getElementById(e);
+            list.style.visibility = state;
+            parent.style ="position:relative; height:20px background-color: rgb(169, 248, 244);padding:0; margin:0";
+        }
+    }
+    </script>
+    <body>
+        <div>
+        <span id = "text" style = "position:absolute; top:100; left:300"> lol </span>
+        <input type = "text" id = "change" onmouseover ="changeValue()" value = "okay"><br>
+        <br><input type = "text" onmouseover ="changeColor(this.value)" onmouseout="resetColor()" value = "Red"><br>
+        <br><input type = "text" onmouseover ="changeColor(this.value)" onmouseout="resetColor()" value = "Blue"><br>
+        <br><input type = "text" onmouseover ="changeColor(this.value)" onmouseout="resetColor()" value = "Yellow"><br>
+        <br><input type = "text" onmouseover ="changeColor(this.value)" onmouseout="resetColor()" value = "Green"><br>
+        <br><input type = "text" onmouseover ="toggleVisibility('hidden')" onmouseout="toggleVisibility('visible')" value = "Visibility"><br>
+        <button value = "table1" onmouseover="visibility(this.value,'visible')"  onmouseout="visibility(this.value,'hidden')"> Dropdown
+            <select style= "visibility: hidden" id = "table1">
+                <option><button><a href= "javascript.html">okay</a></button></option>
+                <option><button>okay</button></option>
+                <option><button>okay</button></option>
+            </select>
+        </span>
+        <br><br><br><div value = "table2" onmouseover="drops('table2','visible',this)"  onmouseout="drops('table2','hidden',this)" style = " height:20px; width:80px; padding:0; margin:0">
+            <button style = "background: blue">Dropdown</button>
+            <ul id = "table2"  style = " visibility: hidden; text-decoration: none;">
+                <li><a href= "javascript.html" >CALCULATOR</a></li>
+                <li><a href= "jasonPractice.html">JSON</a></li>
+                <li><a href= "javascript.html">okay</a></li>
+            </ul>
+        </span>
+        </div>
+    </body>
+    
+</html>

@@ -1,0 +1,45 @@
+*
+{
+  margin: 0;
+  padding:0;
+}
+.main
+{
+   background:rgb(121, 118, 116) url("computer.jpg") center no-repeat;
+   background-size: 100%;
+} 
+#dropdown > li
+{
+  background-color: white;
+  display: inline-block;
+  padding:  10px 15px;
+}
+#dropdown li:hover
+{
+  background-color: rgb(134, 247, 241);
+}
+.options
+{
+  position: absolute;
+}
+.options li
+{
+  background-color: white;
+  padding:  10px 15px;
+  left: 100%;
+  text-decoration: none;
+}
+.inactive
+{
+  display :none;
+}
+.active
+{
+  display : block;
+}
+a
+{
+  text-decoration: none;
+}
+a
+

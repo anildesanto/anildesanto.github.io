@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <link href = "style2.css" rel = "stylesheet" type = "text/css"/>
+        <meta charset = "UFT-8">
+        <link href = "https://fonts.googleapis.com/css?family=Work+Sans:400">
+        <title>Anilde Santo</title>
+    </head>
+   
+    <body class = "main">
+        <div class = "menu">
+            <ul  id = "dropdown">
+                <li onclick="showOptions(this)">PROJECTS</li>
+                    <ul  id = "projects"  class = "inactive options">
+                        <li><a href= "append.html">APPEND</a></li>
+                        <li><a href= "followMouse.html">FOLLOW MOUSE</a></li>
+                        <li><a href= "javascript.html">OTHER</a></li>
+                    </ul>
+                <li onclick="showOptions(this)">ABOUT</li>
+                    <ul  id = "about"  class = "inactive options">
+                        <li><a href= "append.html">APPEND</a></li>
+                        <li><a href= "followMouse.html">ooooooh</a></li>
+                        <li><a href= "javascript.html">OTHER</a></li>
+                    </ul> 
+                <li>OPTIONS</li>
+            </ul>
+        </div>
+
+        <div> 
+            <form onsubmit ="return validateRegistration()" action = "followMouse.html">
+                <input type = "text" id = "name"><br>
+                <input type = "text" id = "email"><br>
+                <input type = "text" id = "password"><br>
+                <button type = "submit"  >SUBMIT</button>
+            </form>
+        </div>
+
+        <div id = "people">
+
+        </div>
+    <script src = "theScript.js"> </script>
+    </body>
+</html>
