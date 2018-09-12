@@ -1,19 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Alegreya:700i|Baloo+Tammudu|Cantarell:700i|Chango|Courgette|Niconne|Nova+Mono");
+
+*
+{
+  margin: 0;
+  padding:0;
+}
 body 
 {
   font-family: 'Nova Mono', monospace;
-	font-weight: 800;
+  background-color: cadetblue;
+  
 }
 
 .container 
 {
     width: 80%;
-    height: 10%;
+    height: 0%;
 	  margin: 0 auto;
 }
 header 
 {
-  background: linear-gradient(to bottom, rgba(54,247,247,0.66) 0%, rgba(44,222,186,0.3) 55%, rgba(44,222,186,0) 100%);
+   /* background: linear-gradient(to bottom, rgba(54,247,247,0.66) 0%, rgba(44,222,186,0.3) 55%, rgba(44,222,186,0) 100%);   */
+    background-color: cadetblue;
 }
 
 header::after {
@@ -37,7 +45,8 @@ nav ul {
   list-style: none;
 }
 
-nav li {
+nav li 
+{
   display: inline-block;
   margin-left: 70px;
   padding-top: 23px;
@@ -47,12 +56,11 @@ nav li {
 h1
 {
   font-family: 'Niconne';
-  font-size: 40px;
 }
 
 nav a
 {
-  color: rgb(0, 0, 0);
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
@@ -79,15 +87,67 @@ nav a:hover::before
 {
   width: 100%;
 }
-.bg-img1 
+.section 
 {
-  background: url("./../images/computer.jpg");
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34f7f7', endColorstr='#2cdeba', GradientType=0 );
-  background-size: cover; 
-  height: 100%;
-} 
-*
+  background: gray;
+  margin: 1%;
+  padding: 5%;
+}
+h1
 {
-  margin: 0;
-  padding:0;
+  color: white;
+  font-size: 50px;
+  font-family: 'Niconne';
+}
+.section h3
+{
+  color: white;
+  font-size: 50px;
+  font-family: 'Nova Mono';
+  background-color:indianred;
+  width:50%;
+  border-radius: 100px;
+  text-align: center; 
+  
+}
+ul
+{
+  list-style: none;
+}
+/*#skillsTable 
+{
+  background-color: white;
+  border-bottom-color: black;
+  border-radius: 5%;
+
+}
+ #skillsTable th, td 
+ { 
+    padding:15px;  
+ } 
+ #skillsTable th 
+{ 
+    color: gray; 
+}*/
+p
+{
+  color: white;
+  font-size: 20px;
+}
+
+#table-caption {
+  color: white;
+  font-size: 50px;
+  font-family: 'Nova Mono';
+  background-color:indianred;
+  width:50%;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.table-middle {
+  position: relative;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
