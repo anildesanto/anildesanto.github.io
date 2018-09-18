@@ -99,7 +99,7 @@ h1
   font-size: 50px;
   font-family: 'Niconne';
 }
-.section h3
+.section h3, caption
 {
   color: white;
   font-size: 50px;
@@ -110,9 +110,24 @@ h1
   text-align: center; 
   
 }
+.section form, table
+{
+  background-color: white;
+  padding: 40px;
+  margin: 30px;
+}
 ul
 {
   list-style: none;
+}
+#welcome h1
+{
+  color: white;
+  font-size: 150px;
+  font-family: 'Nova Mono';
+  background-color:indianred;
+  text-align: center; 
+  align-self:  center; 
 }
 /*#skillsTable 
 {
@@ -135,7 +150,7 @@ p
   font-size: 20px;
 }
 
-#table-caption {
+/* #table-caption {
   color: white;
   font-size: 50px;
   font-family: 'Nova Mono';
@@ -143,11 +158,11 @@ p
   width:50%;
   border-radius: 100px;
   text-align: center;
-}
-
+} */
+/* 
 .table-middle {
   position: relative;
   top: 50px;
   left: 50%;
   transform: translate(-50%,-50%);
-}
+} */
